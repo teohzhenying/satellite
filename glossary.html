@@ -1,0 +1,104 @@
+<!-- The Glossary page -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- meta content -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="glossary">
+    <meta name="author" content="Zhen Ying">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- title -->
+    <title>introduction</title>
+
+</head>
+
+<body>
+
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script>
+
+        // adapted from course code
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("dashboard.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("dashboard-container").innerHTML = html;
+                })
+                .catch(error => {
+                    console.log("Problem!");
+                    console.log(error);
+                });
+
+            const source = document.getElementById('template').innerHTML;
+            const template = Handlebars.compile(source);
+
+            let data = { loaded: false };
+
+            const render = () => {
+                const html = template(data);
+                console.log(html);
+                document.getElementById('content').innerHTML = html;
+            };
+
+            fetch("./data/glossary.json")
+                .then(response => response.json())
+                .then(jsonData => {
+                    if (validateGlossaryData(jsonData)){
+                        data = {
+                            loaded: true,
+                            glossary: jsonData
+                        };
+                        render();
+                    } else{
+                        console.error("Invalid JSON structure.")
+                    }
+                });
+
+            render();
+
+            function validateGlossaryData(jsonData) {
+                if (!Array.isArray(jsonData)) return false;
+
+                // Check if each item in the array has the required properties
+                return jsonData.every(header =>
+                    typeof header.id === "string" &&
+                    typeof header.title === "string" &&
+                    typeof header.description === "string"
+                );
+            }
+
+        })
+
+    </script>
+
+    <div id="dashboard-container"></div>
+
+    &nbsp; &nbsp; &nbsp;
+
+    <!-- TEMPLATE ENGINE HERE -->
+    <div id="content"></div>
+    <script id="template" type="text/x-handlebars-template">
+
+        {{#if loaded}}
+            {{#each glossary}}
+            <p id="{{id}}"></p><b>{{title}}</b></p>
+            <p>{{description}}</p>
+            &nbsp; &nbsp; &nbsp;
+            {{/each}}
+        {{else}}
+            <p>Loading data, please wait...</p>
+        {{/if}}
+    </script>
+
+    &nbsp; &nbsp; &nbsp;
+
+</body>

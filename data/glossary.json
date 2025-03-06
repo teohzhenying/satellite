@@ -1,0 +1,52 @@
+[
+  {
+    "id": "active_optical_networks",
+    "title": "Active Optical Networks (AONs)",
+    "description": "use electrically powered switching equipment to direct signals to specific users. "
+  },
+  {
+    "id": "passive_optical_networks",
+    "title": "Passive Optical Networks (PONs)",
+    "description": "use optical splitters to direct signals."
+  },
+  {
+    "id": "symmetric_DSL",
+    "title": "Symmetric DSL",
+    "description": "splits the upstream and downstream frequencies evenly, providing equal speeds to both uploading and downloading data transfer."
+  },
+  {
+    "id": "asymmetric_DSL",
+    "title": "Asymmetric DSL",
+    "description": "provides a wider frequency range for downstream transfers because most users download more data than they upload."
+  },
+  {
+    "id": "modem",
+    "title": "Modem",
+    "description": "is a small box usually connected to a router that facilitates communication between your computer and the cable service provider."
+  },
+  {
+    "id": "coaxial_wire",
+    "title": "Coaxial Wire",
+    "description": "contains copper wires which transmit the signal in electrical form rather than light form, and allows transmission of data over long distances. The copper wire is wrapped with an insulator and braided mesh. It has an outer layer of plastic."
+  },
+  {
+    "id": "wifi",
+    "title": "WiFi",
+    "description": "refers to a two-way radio communication system that utilizes an existing WiFi network to transmit voice data, allowing users to communicate over a wireless network using their existing internet infrastructure"
+  },
+  {
+    "id": "fibre_connection",
+    "title": "Fibre Connection",
+    "description": "is a technology that transmits data as a light pulse along a glass or plastic fiber."
+  },
+  {
+    "id": "backhauls",
+    "title": "Backhauls",
+    "description": "comprise of the intermediate links between the core network, or backbone network, and the small subnetworks at the edge of the network."
+  },
+  {
+    "id": "wireless_access_points",
+    "title": "Wireless Access Points",
+    "description": "is a networking device that allows wireless-capable devices to connect to a wired network."
+  }
+]

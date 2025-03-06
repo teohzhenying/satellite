@@ -1,0 +1,261 @@
+/* https://fonts.google.com/knowledge/using_type/using_web_fonts */
+@font-face {
+    font-family: 'AtkinsonHyperlegibleMono';
+    font-style: NORMAL;
+    font-display: swap;
+    src: url('final project/fonts/AtkinsonHyperlegibleMono-VariableFont_wght.ttf') format('ttf') url('final project/fonts/AtkinsonHyperlegibleMono-Light.ttf') format('ttf');
+}
+
+/* title styles */
+.title {
+    margin: 5pt;
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+/* nav bar styles */
+.menu {
+    margin-top: 0.3em;
+    margin-bottom: 1rem;
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 350;
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: silver;
+    height: 4.5rem;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 0.15rem solid black;
+    min-width: 200px;
+}
+
+.tooltip-container:hover .tooltip-dropdown {
+    display: block;
+}
+
+.tooltip-dropdown a {
+    display: block;
+    padding: 0rem 0.1rem 0.5rem 0.1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.tooltip-dropdown a:hover {
+    background: #f0f0f0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.introduction,
+.map,
+.llm,
+.glossary {
+    padding: 3rem;
+}
+
+.types {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 300;
+}
+
+/* font styles */
+a,
+p {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 300;
+}
+
+h2 {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 500;
+}
+
+b {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: bold;
+}
+
+/* code for *, grid-container, grid-item, grid-item:hover, grid-item img and grid-item figcaption adapted from my midterm project */
+
+/* Grid Items (Figure Elements) */
+.grid-item {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* Responsive columns */
+    gap: 20px;
+    /* Space between grid items */
+    padding: 20px;
+    /* Padding around the grid */
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+/* Images */
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Figcaptions */
+.grid-item figcaption {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+    flex-grow: 1;
+    /* Source: https://www.w3schools.com/cssref/css3_pr_flex-grow.php */
+    margin-top: 2rem;
+    /* Adjusted because the margin between the picture and the caption (name of Internet carrier) became very close */
+}
+
+.custom-caption {
+    background: lightgray;
+    text-align: center;
+    width: 100%;
+}
+
+th {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 500;
+}
+
+td {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 300;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5%;
+}
+
+th,
+td {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+/* border line styles */
+tr:not(:first-child) {
+    border-top: 0.5px solid gray;
+    border-bottom: 0.5px, gray;
+}
+
+td:first-child,
+th:first-child {
+    background-color: aliceblue;
+    padding-left: 5%;
+}
+
+td:last-child,
+th:last-child {
+    padding-right: 5%;
+}
+
+.table-container {
+    padding-left: 3.2%;
+    padding-right: 3.2%;
+}
+
+td span {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+#input-box-text {
+    padding-left: 10rem;
+}
+
+#input-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+    height: 8vh;
+}
+
+input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+
+body {
+    border-left: 1.5rem;
+    border-right: 1.5rem;
+    padding: 2rem;
+    border-bottom: 2rem !important;
+    min-height: 100vh;
+}
+
+#visible-satellite-results {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 300;
+    color: darkseagreen;
+}
+
+/* TO DEBUG: stretch across the screen */
+#leaflet-map {
+    padding-top: 10px;
+
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; Centers content */
+    gap: 1rem;
+    /* Ensures even spacing */
+}
+
+footer {
+    font-family: 'AtkinsonHyperlegibleMono', sans-serif;
+    font-weight: 150;
+    padding-top: 0.5rem;
+}

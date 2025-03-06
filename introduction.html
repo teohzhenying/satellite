@@ -1,0 +1,59 @@
+<!-- The Introduction page -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <!-- meta content -->
+  <meta charset="UTF-8">
+  <meta name="keywords" content="introduction">
+  <meta name="author" content="Zhen Ying">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <!-- title -->
+  <title>introduction</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    const files = [
+      { file_name: "dashboard.html", elementId: "dashboard-container" },
+      { file_name: "types.html", elementId: "types-container" },
+      { file_name: "comparison.html", elementId: "comparison-container" }
+    ]
+
+    // adapted from course code
+    for (let file of files) {
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch(file.file_name)
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById(file.elementId).innerHTML = html;
+          })
+          .catch(error => {
+            console.log("Problem!");
+            console.log(error);
+          })
+      })
+    }
+
+
+  </script>
+
+  <div id="dashboard-container"></div>
+
+  &nbsp; &nbsp; &nbsp;
+
+  <div id="types-container"></div>
+
+  <div id="comparison-container"></div>
+
+
+</body>
