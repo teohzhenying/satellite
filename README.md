@@ -1,6 +1,4 @@
-<h2>README.md</h2>
-
-WARNING: DO NOT copy my code without attributing to me because I submitted it for my web dev final and I do NOT want to be accused of plagarism. 
+<h2>README.md</h2> 
 
 This folder consists of code discussing types of Internet carriers in the United States of America. It also has a map of Starlink satellites coordinates on Earth. 
 
